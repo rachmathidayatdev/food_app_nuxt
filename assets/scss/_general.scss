@@ -153,6 +153,9 @@ $borderRadiusLength: ();
 	.border-radius-#{$i} {
 		border-radius: #{$i}px;
 	}
+	.border-radius-#{$i}-rem {
+		border-radius: #{$i}rem;
+	}
 	.border-top-left-radius-#{$i} {
 		border-top-left-radius: #{$i}px;
 	}

@@ -1,0 +1,34 @@
+@import '~/assets/scss/global';
+
+.delivery {
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: map-get($colors, body-bg);
+
+    img {
+      @extend .position-absolute;
+      left: 20px;
+    }
+  }
+
+  .item-address {
+    background-color: map-get($colors, white);
+    box-shadow: 0 2px 6px 0 map-get($colors, box-shadow);
+
+    @extend .border-radius-20;
+    @extend .px-20;
+    @extend .py-15;
+    @extend .mt-20;
+
+    div {
+      @extend .py-5;
+    }
+
+    div:not(:last-child) {
+      border-bottom: .5px solid map-get($colors, heather);
+    }
+  }
+}

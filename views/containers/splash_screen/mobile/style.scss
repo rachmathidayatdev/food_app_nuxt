@@ -8,6 +8,13 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     height: calc(100vh);
+
+    .spinner-container {
+      position: absolute;
+      top: 57%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   .welcome-screen--item {

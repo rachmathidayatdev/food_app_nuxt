@@ -40,11 +40,12 @@ export default {
 		value: { type: [String, Number], default: '' },
 		borderRadius: { type: [String, Number], default: 0 },
 		borderColor: { type: String, default: 'manatee' },
+		background: { type: String, default: null },
 		prefixIcon: { type: Boolean, default: true },
 		prefixIconUrl: { type: String, default: ICONS.SEARCH_ICON },
-		suffixIcon: { type: Boolean, default: true },
+		suffixIcon: { type: Boolean, default: false },
 		suffixIconUrl: { type: String, default: ICONS.SEARCH_ICON },
-		material: { type: Boolean, default: true },
+		material: { type: Boolean, default: false },
 		clearInput: { type: Boolean, default: true },
 	},
 	data() {
@@ -71,6 +72,7 @@ export default {
 			const {
 				borderRadius,
 				borderColor,
+				background,
 				prefixIcon,
 				suffixIcon,
 				material,
@@ -82,6 +84,10 @@ export default {
 
 			if (borderColor) {
 				classesInput.push(`border-color-${borderColor}`)
+			}
+
+			if (background) {
+				classesInput.push(`bg-color-${background}`)
 			}
 
 			if (prefixIcon) {
@@ -152,7 +158,12 @@ export default {
 		border: 1px solid;
 
 		@include border-color($colors);
+		@include bg-color($colors);
 		@extend .py-10;
+
+		&:focus {
+			outline: none;
+		}
 
 		&.material {
 			&:focus {

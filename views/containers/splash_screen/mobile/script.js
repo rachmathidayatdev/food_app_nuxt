@@ -3,6 +3,10 @@ import ROUTES from '~/constants/routes'
 
 export default {
 	components: {
+		// Compnent
+		SpinnerRing: () => import('~/views/components/Loader/SpinnerRing'),
+
+		// UI
 		Row: () => import('~/views/ui/Row'),
 	},
 	data() {
@@ -27,7 +31,7 @@ export default {
 	methods: {
 		onChangePage() {
 			localStorage.setItem('isWelcomePageShow', true)
-			this.$router.push(ROUTES.PRODUCT.url)
+			this.$router.push(ROUTES.PRODUCT_LIST.url)
 		},
 	},
 }

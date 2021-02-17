@@ -8,7 +8,7 @@ import { initMobileDevice } from '~/helpers/general'
 export default {
 	transition: 'slide-left',
 	components: {
-		PageContainer: () => import('~/views/containers/product/list'),
+		PageContainer: () => import('~/views/containers/order/delivery'),
 	},
 	mounted() {
 		window.addEventListener('resize', this.screenResize)

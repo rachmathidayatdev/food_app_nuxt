@@ -1,5 +1,5 @@
 <template>
-	<div class="product">page product</div>
+	<div>Splash Screen Desktop</div>
 </template>
 
 <!-- Scripts -->
