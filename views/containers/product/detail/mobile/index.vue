@@ -12,7 +12,7 @@
 				@click="onPageChange"
 			/>
 			<img
-				:src="isFavorit ? icons.favoritRedIcon : icons.favoritBlackIcon"
+				:src="isFavorit ? icons.favoritActiveIcon : icons.favoritIcon"
 				height="20"
 				width="20"
 				@click="onFavoritChange"

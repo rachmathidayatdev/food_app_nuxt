@@ -4,6 +4,7 @@
 			<img :src="prefixIconUrl" width="15" height="15" />
 		</div>
 		<input
+			:ref="customRef"
 			v-model="inputModel"
 			:class="classesInput"
 			:type="type"
@@ -11,6 +12,7 @@
 			:name="name"
 			autocomplete="off"
 			@input="onChange"
+			@click="onClick(payloadCustom)"
 		/>
 		<div v-if="suffixIcon" class="suffix-icon">
 			<img
@@ -32,7 +34,9 @@ import ICONS from '~/constants/icons'
 export default {
 	props: {
 		id: { type: String, default: null },
+		customRef: { type: String, default: null },
 		customClass: { type: String, default: null },
+		inputCustomClass: { type: String, default: null },
 		placeHolder: { type: String, default: '' },
 		type: { type: String, default: 'text' },
 		name: { type: String, default: 'name' },
@@ -41,12 +45,14 @@ export default {
 		borderRadius: { type: [String, Number], default: 0 },
 		borderColor: { type: String, default: 'manatee' },
 		background: { type: String, default: null },
-		prefixIcon: { type: Boolean, default: true },
+		prefixIcon: { type: Boolean, default: false },
 		prefixIconUrl: { type: String, default: ICONS.SEARCH_ICON },
 		suffixIcon: { type: Boolean, default: false },
 		suffixIconUrl: { type: String, default: ICONS.SEARCH_ICON },
 		material: { type: Boolean, default: false },
 		clearInput: { type: Boolean, default: true },
+		onClick: { type: Function, default: () => {} },
+		payloadCustom: { type: String, default: null },
 	},
 	data() {
 		return {
@@ -70,6 +76,7 @@ export default {
 		classesInput() {
 			const classesInput = ['input']
 			const {
+				inputCustomClass,
 				borderRadius,
 				borderColor,
 				background,
@@ -77,6 +84,10 @@ export default {
 				suffixIcon,
 				material,
 			} = this
+
+			if (inputCustomClass) {
+				classesInput.push(inputCustomClass)
+			}
 
 			if (borderRadius) {
 				classesInput.push(`border-radius-${borderRadius}`)
@@ -159,7 +170,6 @@ export default {
 
 		@include border-color($colors);
 		@include bg-color($colors);
-		@extend .py-10;
 
 		&:focus {
 			outline: none;

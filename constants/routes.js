@@ -15,6 +15,11 @@ const PRODUCT = {
 		route: '/product/detail/:slug',
 		url: '/product/detail',
 	},
+	PRODUCT_SEARCH: {
+		href: '/product/search.vue',
+		route: '/product/search',
+		url: '/product/search',
+	},
 }
 
 const ORDER = {
@@ -23,15 +28,41 @@ const ORDER = {
 		route: '/order/cart',
 		url: '/order/cart',
 	},
-	DELIVERY: {
-		href: '/order/delivery.vue',
+	CHECKOUT: {
+		href: '/order/checkout.vue',
 		route: '/order/delivery',
 		url: '/order/delivery',
 	},
+	ORDER_LIST: {
+		href: '/order/list.vue',
+		route: '/order',
+		url: '/order',
+	},
+}
+
+const FAVORIT = {
+	href: '/favorit.vue',
+	route: '/favorit',
+	url: '/favorit',
+}
+
+const PROFILE = {
+	href: '/profile.vue',
+	route: '/profile',
+	url: '/profile',
+}
+
+const HISTORY = {
+	href: '/history.vue',
+	route: '/history',
+	url: '/history',
 }
 
 module.exports = {
 	INDEX,
 	...PRODUCT,
 	...ORDER,
+	FAVORIT,
+	PROFILE,
+	HISTORY,
 }

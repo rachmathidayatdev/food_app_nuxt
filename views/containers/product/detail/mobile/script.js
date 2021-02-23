@@ -12,8 +12,8 @@ export default {
 	data() {
 		return {
 			icons: {
-				favoritBlackIcon: ICONS.FAVORIT_BLACK_ICON,
-				favoritRedIcon: ICONS.FAVORIT_RED_ICON,
+				favoritIcon: ICONS.FAVORIT_ICON,
+				favoritActiveIcon: ICONS.FAVORIT_ACTIVE_ICON,
 				leftArrowIcon: ICONS.LEFT_ARROW_ICON,
 			},
 			product: {

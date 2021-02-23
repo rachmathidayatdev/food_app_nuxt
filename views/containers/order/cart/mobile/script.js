@@ -60,7 +60,7 @@ export default {
 			this.carts = carts
 		},
 		onCheckout() {
-			this.$router.push(ROUTES.DELIVERY.url)
+			this.$router.push(ROUTES.CHECKOUT.url)
 		},
 	},
 }

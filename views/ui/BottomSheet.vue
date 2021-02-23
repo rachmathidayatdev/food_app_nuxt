@@ -1,11 +1,7 @@
 <template>
-	<div :class="`bottom-sheet ${visible ? 'active' : ''}`">
+	<div :class="`bottom-sheet ${visible ? 'active' : ''}`" :style="styleCustom">
 		<div class="bottom-sheet-backdrop" @click="closeBottomSheet">
-			<div
-				class="bottom-sheet-container p-10"
-				:style="styleCustom"
-				@click="onBodyClick"
-			>
+			<div class="bottom-sheet-container p-10" @click="onBodyClick">
 				<header>
 					<slot name="bottom-sheet-header" />
 				</header>
@@ -30,10 +26,11 @@ export default {
 			default: process.client ? screen.height - 36 : 736,
 		},
 		isRoundedHeader: { type: Boolean, default: true },
+		backdropColor: { type: String, default: 'rgba(0, 0, 0, 0.8)' },
 	},
 	computed: {
 		styleCustom() {
-			const { height, maxHeight, isRoundedHeader } = this
+			const { height, maxHeight, isRoundedHeader, backdropColor } = this
 
 			return {
 				'--height': height > maxHeight ? `${maxHeight}px` : `${height}px`,
@@ -41,6 +38,7 @@ export default {
 				'--is-rounded-header': isRoundedHeader ? '20px' : '0px',
 				'--height-content':
 					height > maxHeight ? `${maxHeight - 50}px` : `${height - 50}px`,
+				'--backdrop-color': backdropColor,
 			}
 		},
 	},
@@ -68,7 +66,7 @@ export default {
 	.bottom-sheet-backdrop {
 		height: calc(100vh - 37px);
 		overflow: hidden;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: var(--backdrop-color);
 
 		.bottom-sheet-container {
 			position: absolute;

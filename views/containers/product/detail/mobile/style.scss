@@ -32,9 +32,12 @@
       height: 50px;
       color: map-get($colors, white);
       outline: none;
-      box-shadow: none;
       
       @extend .border-radius-30;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }

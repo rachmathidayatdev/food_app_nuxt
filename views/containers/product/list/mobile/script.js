@@ -125,5 +125,11 @@ export default {
 		stringToSlug(slug) {
 			return slug.toLowerCase().split(' ').join('-')
 		},
+		onOrderPageChange() {
+			this.$router.push(ROUTES.ORDER_LIST.url)
+		},
+		onSearchPageChange() {
+			this.$router.push(ROUTES.PRODUCT_SEARCH.url)
+		},
 	},
 }

@@ -6,7 +6,12 @@
 			justify-content="space-between"
 		>
 			<img :src="icons.burgerMenuIcon" height="20" width="20" />
-			<img :src="icons.shoppingCartIcon" height="20" width="20" />
+			<img
+				:src="icons.shoppingCartIcon"
+				height="20"
+				width="20"
+				@click="onOrderPageChange"
+			/>
 		</Row>
 		<Column custom-class="px-20 py-10">
 			<TextView custom-class="font-32" font-weight="700">Delicious</TextView>
@@ -14,6 +19,7 @@
 		</Column>
 		<Row custom-class="px-20 py-5">
 			<TextInput
+				input-custom-class="py-10"
 				type="text"
 				place-holder="Search"
 				name="productName"
@@ -22,6 +28,8 @@
 				border-radius="30"
 				border-color="transparent"
 				background="gallery"
+				:on-click="onSearchPageChange"
+				:prefix-icon="true"
 				@onChange="onChange"
 				@clearValue="
 					clearValue({
