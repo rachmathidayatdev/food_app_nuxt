@@ -1,9 +1,6 @@
 <template>
 	<div>
-		<div v-if="isMobile">
-			<!-- body -->
-			<ViewMobile />
-		</div>
+		<ViewMobile v-if="isMobile" />
 		<ViewDesktop v-else />
 	</div>
 </template>
