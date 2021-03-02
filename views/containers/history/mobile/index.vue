@@ -35,7 +35,9 @@
 			>
 		</Column>
 		<Column custom-class="footer-container">
-			<button type="button" @click="onOrder">Star ordering</button>
+			<button type="button" @click="openBottomSheetKeywoard">
+				Star ordering
+			</button>
 		</Column>
 	</div>
 </template>

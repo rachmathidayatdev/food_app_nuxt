@@ -40,9 +40,6 @@
 		<client-only>
 			<BottomSheet
 				:visible="isBottomSheetKeywoardShow"
-				:height="700"
-				:is-rounded-header="true"
-				backdrop-color="transparent"
 				@closeBottomSheet="closeBottomSheetKeywoard"
 			>
 				<template slot="bottom-sheet-header">

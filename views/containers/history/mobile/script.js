@@ -15,6 +15,7 @@ export default {
 			},
 		}
 	},
+	mounted() {},
 	methods: {
 		onPageChange() {
 			this.$router.back()
