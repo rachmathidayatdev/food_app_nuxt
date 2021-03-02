@@ -2,7 +2,7 @@
 
 .splash-screen {
   .splash-screen--item {
-    visibility: visible;
+    display: block;
     background-image: url('/images/splash-screen.png');
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -19,13 +19,13 @@
 
   .welcome-screen--item {
     position: relative;
-    visibility: visible;
+    display: block;
     background-image: url('/images/welcome-screen.png');
     background-position: inherit; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    height: calc(100vh);
+    background-size: 100% 100%;
     background-color: map-get($colors, vermillion);
+    height: calc(100vh);
     @extend .px-20;
 
     .btn-started {
